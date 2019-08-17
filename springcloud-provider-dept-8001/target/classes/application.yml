@@ -38,5 +38,5 @@ eureka:
 info:
   app.name: atguigu-microservicecloud
   company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  build.artifactId: springcloud-provider-dept-8001
+  build.version: 1.0-SNAPSHOT

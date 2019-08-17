@@ -14,8 +14,8 @@ import java.util.List;
 public class DeptController {
 
 
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
-    //private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-DEPT";
+    //private static final String REST_URL_PREFIX = "http://localhost:8001";
+    private static final String REST_URL_PREFIX = "http://SPRINGCLOUD-DEPT";
 
     @Autowired
     private RestTemplate restTemplate;

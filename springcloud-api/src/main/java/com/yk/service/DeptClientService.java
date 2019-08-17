@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 /**
- * @Description TODO
+ * 一个实现了FallbackFactory接口的类DeptClientServiceFallbackFactory
  * @Author yk
  * @Date 2019/8/14 21:41
  */
-@FeignClient(value = "springcloud-dept")
+//@FeignClient(value = "springcloud-dept")
+@FeignClient(value = "springcloud-dept",fallbackFactory=DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
     @RequestMapping(value = "/dept/add", method = RequestMethod.POST)

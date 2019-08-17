@@ -1,13 +1,17 @@
 package com.yk.controller;
 
+
 import com.yk.entity.Dept;
 import com.yk.service.DeptService;
+import com.alibaba.fastjson.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description TODO
@@ -37,6 +41,22 @@ public class DeptController {
     @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
     public List<Dept> list() {
         return service.list();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getJson")
+    public Map getJSON() {
+        Map map = new HashMap<>();
+        JSONObject properties = new JSONObject();
+        properties.put("id","1");
+        properties.put("name","yangkai");
+        StringBuffer sb = new StringBuffer();
+        sb.append("/deepAnalyze?queryJson=");
+
+        sb.append(properties);
+        map.put("url",sb.toString().replace("\\","") );
+        map.put("url2",properties );
+        return map;
     }
 
     /**
